@@ -1,0 +1,7 @@
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\bin\Debug\GettingStartedLib.dll.config
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\bin\Debug\GettingStartedLib.dll
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\bin\Debug\GettingStartedLib.pdb
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.dll
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.pdb
+C:\Users\ADMIN\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.csprojResolveAssemblyReference.cache
