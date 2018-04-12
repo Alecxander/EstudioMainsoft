@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace GeekQuiz
 {
@@ -9,6 +10,11 @@ namespace GeekQuiz
     {
         public static void Register(HttpConfiguration config)
         {
+            // Web API configuration and services.
+
+            // Use camel case for JSON data.
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
             // Configuración y servicios de API web
 
             // Rutas de API web

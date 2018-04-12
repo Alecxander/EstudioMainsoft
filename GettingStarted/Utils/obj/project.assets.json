@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\source\\repos\\GettingStarted\\Utils\\Utils.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
       "projectName": "Utils",
-      "projectPath": "C:\\Users\\ADMIN\\source\\repos\\GettingStarted\\Utils\\Utils.csproj",
+      "projectPath": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\source\\repos\\GettingStarted\\Utils\\obj\\",
+      "outputPath": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

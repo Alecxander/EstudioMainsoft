@@ -49,56 +49,56 @@ namespace GettingStartedClient
             else if ( example == Util.EnumExamples.ExampleFault)
             {
                 #region Example Fault
-                //SampleServiceClient client = new SampleServiceClient();
-                //try
-                //{
+                SampleServiceClient client = new SampleServiceClient();
+                try
+                {
 
-                //    // Test Fault Execption
-                //    string msg = "Probar el error";
-                //    string result = client.SampleMethod(msg);
-                //    Console.WriteLine("Error Fault " + result);
+                    // Test Fault Execption
+                    string msg = "Probar el error";
+                    string result = client.SampleMethod(msg);
+                    Console.WriteLine("Error Fault " + result);
 
-                //    client.Close();
-                //    Console.ReadLine();
-                //}
-                //catch (TimeoutException timeProblem)
-                //{
-                //    Console.WriteLine("The service operation timed out. " + timeProblem.Message);
-                //    Console.ReadLine();
-                //    client.Abort();
-                //}
-                //catch (FaultException<GreetingFault> greetingFault)
-                //{
-                //    Console.WriteLine(greetingFault.Detail.Message);
-                //    Console.ReadLine();
-                //    client.Abort();
-                //}
-                //catch (FaultException unknownFault)
-                //{
-                //    Console.WriteLine("An unknown exception was received. " + unknownFault.Message);
-                //    Console.ReadLine();
-                //    client.Abort();
-                //}
-                //catch (CommunicationException ce)
-                //{
-                //    Console.WriteLine("An exception occurred: {0}", ce.Message);
-                //    Console.ReadLine();
-                //    client.Abort();
-                //}
+                    client.Close();
+                    Console.ReadLine();
+                }
+                catch (TimeoutException timeProblem)
+                {
+                    Console.WriteLine("The service operation timed out. " + timeProblem.Message);
+                    Console.ReadLine();
+                    client.Abort();
+                }
+                catch (FaultException<GreetingFault> greetingFault)
+                {
+                    Console.WriteLine(greetingFault.Detail.Message);
+                    Console.ReadLine();
+                    client.Abort();
+                }
+                catch (FaultException unknownFault)
+                {
+                    Console.WriteLine("An unknown exception was received. " + unknownFault.Message);
+                    Console.ReadLine();
+                    client.Abort();
+                }
+                catch (CommunicationException ce)
+                {
+                    Console.WriteLine("An exception occurred: {0}", ce.Message);
+                    Console.ReadLine();
+                    client.Abort();
+                }
                 #endregion
             }
             else if(example == Util.EnumExamples.ExampleAsincrono)
             {
                 #region Example Asincrono
 
-                //// Step 1: Create an instance of the WCF proxy
-                SampleServiceAsincronoClient cliente = new SampleServiceAsincronoClient();
+                ////// Step 1: Create an instance of the WCF proxy
+                //SampleServiceAsincronoClient cliente = new SampleServiceAsincronoClient();
 
-                //// Step 2: Call the service operations.
-                Console.WriteLine(cliente.SampleMethodAsincrono("Metodo SampleMethodAsincrono"));
+                ////// Step 2: Call the service operations.
+                //Console.WriteLine(cliente.SampleMethodAsincrono("Metodo SampleMethodAsincrono"));
 
-                cliente.Close();
-                Console.ReadLine();
+                //cliente.Close();
+                //Console.ReadLine();
 
                 #endregion
             }
