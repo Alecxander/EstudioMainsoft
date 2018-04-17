@@ -177,24 +177,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Users\\TEMP.MCUESTAS.004\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
+      "projectUniqueName": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
       "projectName": "Utils",
-      "projectPath": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Documents\\ProyectosEstudio\\EstudioMainsoft\\GettingStarted\\Utils\\obj\\",
+      "projectPath": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
+      "packagesPath": "C:\\Users\\TEMP.MCUESTAS.004\\.nuget\\packages\\",
+      "outputPath": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\TEMP.MCUESTAS.004\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
