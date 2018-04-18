@@ -1,0 +1,11 @@
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\BaseDatosSomee.dll.config
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\BaseDatosSomee.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\BaseDatosSomee.pdb
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\EntityFramework.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\EntityFramework.SqlServer.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\EntityFramework.xml
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\bin\Debug\EntityFramework.SqlServer.xml
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.csproj.CoreCompileInputs.cache
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.csproj.CopyComplete
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.pdb

@@ -1,0 +1,11 @@
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\BaseDatos.dll.config
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\BaseDatos.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\BaseDatos.pdb
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\EntityFramework.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\EntityFramework.SqlServer.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\EntityFramework.xml
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\bin\Release\EntityFramework.SqlServer.xml
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\obj\Release\BaseDatosLocal.csproj.CoreCompileInputs.cache
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\obj\Release\BaseDatosLocal.csproj.CopyComplete
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\obj\Release\BaseDatos.dll
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatos\obj\Release\BaseDatos.pdb
