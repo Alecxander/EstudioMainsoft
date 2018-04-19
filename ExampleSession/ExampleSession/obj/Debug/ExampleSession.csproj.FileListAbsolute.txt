@@ -1,0 +1,7 @@
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\bin\Debug\ExampleSession.dll.config
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\bin\Debug\ExampleSession.dll
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\bin\Debug\ExampleSession.pdb
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\obj\Debug\ExampleSession.csprojResolveAssemblyReference.cache
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\obj\Debug\ExampleSession.csproj.CoreCompileInputs.cache
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\obj\Debug\ExampleSession.dll
+E:\Estudio\EstudioMainsoft\ExampleSession\ExampleSession\obj\Debug\ExampleSession.pdb

@@ -19,7 +19,7 @@ namespace WebServices
     public class Login : System.Web.Services.WebService
     {
 
-        [WebMethod]
+        [WebMethod (CacheDuration = 0, Description = "Metodo que crea token si el usuario y contraseña son correctos", MessageName = "Metodo_login")]
         public string LoginByUserAndPassword(string usuario, string password)
         {
             using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())

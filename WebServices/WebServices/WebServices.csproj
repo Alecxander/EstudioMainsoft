@@ -97,10 +97,6 @@
       <Project>{9af36789-50e8-4ac2-b07d-11dca649c6e0}</Project>
       <Name>BaseDatosSomee</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BaseDatos\BaseDatosLocal.csproj">
-      <Project>{05e9f25e-7f9d-49c9-a4e1-8108298e3703}</Project>
-      <Name>BaseDatosLocal</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

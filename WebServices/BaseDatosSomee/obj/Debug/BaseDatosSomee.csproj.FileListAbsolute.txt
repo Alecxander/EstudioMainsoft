@@ -9,3 +9,4 @@ E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.c
 E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.csproj.CopyComplete
 E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.dll
 E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.pdb
+E:\Estudio\EstudioMainsoft\WebServices\BaseDatosSomee\obj\Debug\BaseDatosSomee.csprojResolveAssemblyReference.cache

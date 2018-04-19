@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LoginByUserAndPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginByUserAndPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginByUserAndPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validarTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginByUserAndPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginByUserAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="LoginByUserAndPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginByUserAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:validarToken" />
+  </wsdl:message>
+  <wsdl:message name="validarTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:validarTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarToken" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTokenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LoginSoap">
+    <wsdl:operation name="LoginByUserAndPassword">
+      <wsdl:input message="tns:LoginByUserAndPasswordSoapIn" />
+      <wsdl:output message="tns:LoginByUserAndPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarToken">
+      <wsdl:input message="tns:validarTokenSoapIn" />
+      <wsdl:output message="tns:validarTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarToken">
+      <wsdl:input message="tns:eliminarTokenSoapIn" />
+      <wsdl:output message="tns:eliminarTokenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoginSoap" type="tns:LoginSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginByUserAndPassword">
+      <soap:operation soapAction="http://tempuri.org/LoginByUserAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarToken">
+      <soap:operation soapAction="http://tempuri.org/validarToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarToken">
+      <soap:operation soapAction="http://tempuri.org/eliminarToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoginSoap12" type="tns:LoginSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginByUserAndPassword">
+      <soap12:operation soapAction="http://tempuri.org/LoginByUserAndPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarToken">
+      <soap12:operation soapAction="http://tempuri.org/validarToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarToken">
+      <soap12:operation soapAction="http://tempuri.org/eliminarToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Login">
+    <wsdl:port name="LoginSoap" binding="tns:LoginSoap">
+      <soap:address location="http://www.alecxander.somee.com/Login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoginSoap12" binding="tns:LoginSoap12">
+      <soap12:address location="http://www.alecxander.somee.com/Login.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

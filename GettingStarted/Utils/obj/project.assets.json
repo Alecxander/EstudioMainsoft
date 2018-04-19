@@ -177,7 +177,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TEMP.MCUESTAS.004\\.nuget\\packages\\": {},
+    "C:\\Users\\TEMP.MCUESTAS.006\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
@@ -187,7 +187,7 @@
       "projectUniqueName": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
       "projectName": "Utils",
       "projectPath": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\Utils.csproj",
-      "packagesPath": "C:\\Users\\TEMP.MCUESTAS.004\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\TEMP.MCUESTAS.006\\.nuget\\packages\\",
       "outputPath": "E:\\Estudio\\EstudioMainsoft\\GettingStarted\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -195,7 +195,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\TEMP.MCUESTAS.004\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TEMP.MCUESTAS.006\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
