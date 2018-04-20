@@ -4,14 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LoginWebServiceSomeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LoginWebServiceSomeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductoCategoriaID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="30" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductoCategoria">
+          <Key>
+            <PropertyRef Name="ProductoCategoriaID" />
+          </Key>
+          <Property Name="ProductoCategoriaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="ServiceToken">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Token" Type="uniqueidentifier" />
-          <Property Name="Fecha_creacion" Type="datetime" />
+          <Property Name="Fecha_creacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ServiceUsuario">
           <Key>
@@ -22,58 +41,135 @@
           <Property Name="Password" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Fecha_creacion" Type="datetime" />
         </EntityType>
+        <Association Name="FK__Producto__Produc__2A4B4B5E">
+          <End Role="ProductoCategoria" Type="Self.ProductoCategoria" Multiplicity="1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductoCategoria">
+              <PropertyRef Name="ProductoCategoriaID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="ProductoCategoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LoginWebServiceSomeeModelStoreContainer">
-          <EntitySet Name="ServiceToken" EntityType="Self.ServiceToken" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ServiceUsuario" EntityType="Self.ServiceUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoCategoria" EntityType="Self.ProductoCategoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceToken" EntityType="Self.ServiceToken" Schema="Login" store:Type="Tables" />
+          <EntitySet Name="ServiceUsuario" EntityType="Self.ServiceUsuario" Schema="Login" store:Type="Tables" />
+          <AssociationSet Name="FK__Producto__Produc__2A4B4B5E" Association="Self.FK__Producto__Produc__2A4B4B5E">
+            <End Role="ProductoCategoria" EntitySet="ProductoCategoria" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LoginWebServiceSomeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LoginWebServiceSomeeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Productoes" EntityType="LoginWebServiceSomeeModel.Producto" />
+          <EntitySet Name="ProductoCategorias" EntityType="LoginWebServiceSomeeModel.ProductoCategoria" />
+          <EntitySet Name="ServiceTokens" EntityType="LoginWebServiceSomeeModel.ServiceToken" />
+          <EntitySet Name="ServiceUsuarios" EntityType="LoginWebServiceSomeeModel.ServiceUsuario" />
+          <AssociationSet Name="FK__Producto__Produc__2A4B4B5E" Association="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E">
+            <End Role="ProductoCategoria" EntitySet="ProductoCategorias" />
+            <End Role="Producto" EntitySet="Productoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductoCategoriaID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ProductoCategoria" Relationship="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E" FromRole="Producto" ToRole="ProductoCategoria" />
+        </EntityType>
+        <EntityType Name="ProductoCategoria">
+          <Key>
+            <PropertyRef Name="ProductoCategoriaID" />
+          </Key>
+          <Property Name="ProductoCategoriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Productoes" Relationship="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E" FromRole="ProductoCategoria" ToRole="Producto" />
+        </EntityType>
         <EntityType Name="ServiceToken">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Token" Type="Guid" />
-          <Property Name="Fecha_creacion" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_creacion" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="ServiceUsuario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Fecha_creacion" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="LoginWebServiceSomeeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ServiceTokens" EntityType="Self.ServiceToken" />
-          <EntitySet Name="ServiceUsuarios" EntityType="Self.ServiceUsuario" />
-        </EntityContainer>
+        <Association Name="FK__Producto__Produc__2A4B4B5E">
+          <End Type="LoginWebServiceSomeeModel.ProductoCategoria" Role="ProductoCategoria" Multiplicity="1" />
+          <End Type="LoginWebServiceSomeeModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductoCategoria">
+              <PropertyRef Name="ProductoCategoriaID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="ProductoCategoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LoginWebServiceSomeeModelStoreContainer" CdmEntityContainer="LoginWebServiceSomeeEntities">
+          <EntitySetMapping Name="Productoes">
+            <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ProductoCategoriaID" ColumnName="ProductoCategoriaID" />
+                <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoCategorias">
+            <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ProductoCategoria">
+              <MappingFragment StoreEntitySet="ProductoCategoria">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ProductoCategoriaID" ColumnName="ProductoCategoriaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ServiceTokens">
             <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ServiceToken">
               <MappingFragment StoreEntitySet="ServiceToken">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Token" ColumnName="Token" />
                 <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ServiceUsuarios">
             <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ServiceUsuario">
               <MappingFragment StoreEntitySet="ServiceUsuario">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

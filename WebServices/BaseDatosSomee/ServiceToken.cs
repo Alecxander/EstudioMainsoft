@@ -16,6 +16,6 @@ namespace BaseDatosSomee
     {
         public int Id { get; set; }
         public Nullable<System.Guid> Token { get; set; }
-        public Nullable<System.DateTime> Fecha_creacion { get; set; }
+        public System.DateTime Fecha_creacion { get; set; }
     }
 }

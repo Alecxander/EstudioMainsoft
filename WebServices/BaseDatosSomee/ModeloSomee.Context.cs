@@ -25,6 +25,8 @@ namespace BaseDatosSomee
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Producto> Productoes { get; set; }
+        public virtual DbSet<ProductoCategoria> ProductoCategorias { get; set; }
         public virtual DbSet<ServiceToken> ServiceTokens { get; set; }
         public virtual DbSet<ServiceUsuario> ServiceUsuarios { get; set; }
     }

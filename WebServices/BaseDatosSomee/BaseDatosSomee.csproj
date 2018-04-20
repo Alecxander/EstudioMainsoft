@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ProductoDetalleDTO.cs" />
+    <Compile Include="DTO\ProductoDTO.cs" />
+    <Compile Include="DTO\ProductoNuevoDTO.cs" />
     <Compile Include="ILoginWebService.cs" />
     <Compile Include="ModeloSomee.Context.cs">
       <AutoGen>True</AutoGen>
@@ -64,6 +67,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloSomee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>ModeloSomee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoCategoria.cs">
+      <DependentUpon>ModeloSomee.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceToken.cs">

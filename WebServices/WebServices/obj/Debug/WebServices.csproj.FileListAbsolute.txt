@@ -49,15 +49,12 @@ E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\roslyn\vbc.exe.config
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\roslyn\vbc.rsp
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\roslyn\VBCSCompiler.exe
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\roslyn\VBCSCompiler.exe.config
-E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatos.dll
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatosSomee.dll
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\EntityFramework.dll
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\EntityFramework.SqlServer.dll
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatosSomee.pdb
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatosSomee.dll.config
-E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatos.pdb
-E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\BaseDatos.dll.config
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\EntityFramework.xml
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\EntityFramework.SqlServer.xml
 E:\Estudio\EstudioMainsoft\WebServices\WebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

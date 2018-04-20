@@ -5,8 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6c3c4df16ca9426a80d415d1a5727121" Name="Diagram1">
-        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.ServiceToken" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.ServiceUsuario" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.Producto" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.ProductoCategoria" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.ServiceToken" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LoginWebServiceSomeeModel.ServiceUsuario" Width="1.5" PointX="2.75" PointY="4.75" />
+        <AssociationConnector Association="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
