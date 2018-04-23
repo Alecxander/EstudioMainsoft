@@ -83,11 +83,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.asmx" />
+    <Content Include="Productos.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.asmx.cs">
       <DependentUpon>Login.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Productos.asmx.cs">
+      <DependentUpon>Productos.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +101,14 @@
     <ProjectReference Include="..\BaseDatosSomee\BaseDatosSomee.csproj">
       <Project>{9af36789-50e8-4ac2-b07d-11dca649c6e0}</Project>
       <Name>BaseDatosSomee</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBLogin\DBLogin.csproj">
+      <Project>{5a1864d4-d976-4038-aa3b-d2403cf22694}</Project>
+      <Name>DBLogin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBProductos\DBProductos.csproj">
+      <Project>{0a54803f-0241-4610-ba37-7e5291ccf7a2}</Project>
+      <Name>DBProductos</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,24 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LoginWebServiceSomeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LoginWebServiceSomeeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Productoes" EntityType="LoginWebServiceSomeeModel.Producto" />
+    <EntitySet Name="ProductoCategorias" EntityType="LoginWebServiceSomeeModel.ProductoCategoria" />
+    <EntitySet Name="ServiceTokens" EntityType="LoginWebServiceSomeeModel.ServiceToken" />
+    <EntitySet Name="ServiceUsuarios" EntityType="LoginWebServiceSomeeModel.ServiceUsuario" />
+    <AssociationSet Name="FK__Producto__Produc__2A4B4B5E" Association="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E">
+      <End Role="ProductoCategoria" EntitySet="ProductoCategorias" />
+      <End Role="Producto" EntitySet="Productoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="ProductoID" />
+    </Key>
+    <Property Name="ProductoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductoCategoriaID" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductoCategoria" Relationship="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E" FromRole="Producto" ToRole="ProductoCategoria" />
+  </EntityType>
+  <EntityType Name="ProductoCategoria">
+    <Key>
+      <PropertyRef Name="ProductoCategoriaID" />
+    </Key>
+    <Property Name="ProductoCategoriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Productoes" Relationship="LoginWebServiceSomeeModel.FK__Producto__Produc__2A4B4B5E" FromRole="ProductoCategoria" ToRole="Producto" />
+  </EntityType>
   <EntityType Name="ServiceToken">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Token" Type="Guid" />
-    <Property Name="Fecha_creacion" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_creacion" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="ServiceUsuario">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Fecha_creacion" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="LoginWebServiceSomeeEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="ServiceTokens" EntityType="Self.ServiceToken" />
-    <EntitySet Name="ServiceUsuarios" EntityType="Self.ServiceUsuario" />
-  </EntityContainer>
+  <Association Name="FK__Producto__Produc__2A4B4B5E">
+    <End Type="LoginWebServiceSomeeModel.ProductoCategoria" Role="ProductoCategoria" Multiplicity="1" />
+    <End Type="LoginWebServiceSomeeModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductoCategoria">
+        <PropertyRef Name="ProductoCategoriaID" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="ProductoCategoriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

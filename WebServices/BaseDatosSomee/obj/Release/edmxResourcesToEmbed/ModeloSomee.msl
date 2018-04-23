@@ -1,22 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LoginWebServiceSomeeModelStoreContainer" CdmEntityContainer="LoginWebServiceSomeeEntities">
+    <EntitySetMapping Name="Productoes">
+      <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProductoCategoriaID" ColumnName="ProductoCategoriaID" />
+          <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductoCategorias">
+      <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ProductoCategoria">
+        <MappingFragment StoreEntitySet="ProductoCategoria">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProductoCategoriaID" ColumnName="ProductoCategoriaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ServiceTokens">
       <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ServiceToken">
         <MappingFragment StoreEntitySet="ServiceToken">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Token" ColumnName="Token" />
           <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ServiceUsuarios">
       <EntityTypeMapping TypeName="LoginWebServiceSomeeModel.ServiceUsuario">
         <MappingFragment StoreEntitySet="ServiceUsuario">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

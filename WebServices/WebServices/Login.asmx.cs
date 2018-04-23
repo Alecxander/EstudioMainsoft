@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Xml.Serialization;
-using BaseDatosSomee;
+//using BaseDatosSomee;
 //using BaseDatos;
 using BaseDatosSomee.DTO;
+using DBLogin;
+using DBProductos;
 
 namespace WebServices
 {
@@ -24,7 +26,7 @@ namespace WebServices
         [WebMethod (CacheDuration = 0, Description = "Metodo que crea token si el usuario y contraseña son correctos", MessageName = "Metodo_login")]
         public string LoginByUserAndPassword(string usuario, string password)
         {
-            using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
+            using (LoginWebServiceLoginEntities db = new LoginWebServiceLoginEntities())
             {
                 var usuarioDB = db.ServiceUsuarios.FirstOrDefault(u => u.Usuario.Trim() == usuario.Trim() && u.Password.Trim() == password.Trim());
 
@@ -58,9 +60,9 @@ namespace WebServices
                     //Guid userToken = new Guid(token);
                     if (Guid.TryParse(token, out userToken))
                     {
-                        using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
+                        using (LoginWebServiceLoginEntities db = new LoginWebServiceLoginEntities())
                         {
-                            var tresHorasAntes = DateTime.Now.AddSeconds(-3); //DateTime.Now.AddHours(-3);
+                            var tresHorasAntes = DateTime.Now.AddMinutes(-10); //DateTime.Now.AddHours(-3);
                             var dbToken = db.ServiceTokens.FirstOrDefault(t => t.Token == userToken);
                             if (dbToken != null && dbToken.Fecha_creacion > tresHorasAntes)
                             {
@@ -92,7 +94,7 @@ namespace WebServices
                 Guid userToken = new Guid(token);
                 if (userToken != null)
                 {
-                    using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
+                    using (LoginWebServiceLoginEntities db = new LoginWebServiceLoginEntities())
                     {
                         var myToken = db.ServiceTokens.FirstOrDefault(t => t.Token == userToken);
                         if (myToken != null)
@@ -111,68 +113,6 @@ namespace WebServices
             return tokenEliminado;
         }
 
-        [WebMethod(Description = "Obtiene los productos de la base de datos")]
-        public List<ProductoDTO> ObtenerProductos()
-        {
-            using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
-            {
-                List<ProductoDTO> productos = db.Productoes.Select(p => new ProductoDTO
-                {
-                    Nombre = p.Nombre,
-                    Precio = p.Precio,
-                    ProductoID = p.ProductoID
-                }).ToList();
-                return productos;
-            }
-        }
-
-        [WebMethod(Description = "Obtiene los detalles del producto")]
-        public ProductoDetalleDTO ObtenerProductoDetalle(int idProducto)
-        {
-            using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
-            {
-                Producto producto = db.Productoes.Where(p => p.ProductoID == idProducto)
-                    .FirstOrDefault();
-
-                ProductoCategoria productoCategoria = new ProductoCategoria();
-
-                if (producto != null)
-                {
-                    productoCategoria = db.ProductoCategorias.Where(c => c.ProductoCategoriaID == producto.ProductoCategoriaID)
-                        .FirstOrDefault();
-                }
-
-                ProductoDetalleDTO productoDetalleDTO = new ProductoDetalleDTO()
-                {
-                    Categoria = productoCategoria.Nombre,
-                    Nombre = producto.Nombre,
-                    Color = producto.Color,
-                    FechaCreacion = producto.FechaCreacion,
-                    Precio = producto.Precio,
-                    ProductoID = producto.ProductoID
-                };
-
-                return productoDetalleDTO;
-            }
-        }
-
-        [WebMethod(Description = "Agrega un nuevo Producto a la base de datos enviando el Objeto Producto.\nProductoId(1=bebidas,2=granos)")]
-        public bool AgregarNuevoProducto(ProductoDTO producto)
-        {
-            try
-            {
-                //using (LoginWebServiceSomeeEntities db = new LoginWebServiceSomeeEntities())
-                //{
-                //    db.Productoes.Add(producto);
-                //    db.SaveChanges();
-                //}
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                throw;
-            }
-        }
+        
     }
 }
