@@ -21,11 +21,4 @@ namespace WcfService1.DTO
         [DataMember]
         public string Profesor { get; set; }
     }
-
-    [DataContract]
-    public class ObtenerAlumnosDTOLista
-    {
-        [DataMember]
-        public List<ObtenerAlumnosDTO> obtenerAlumnosDTOs { get; set; }
-    }
 }

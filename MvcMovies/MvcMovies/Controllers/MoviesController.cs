@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -15,9 +16,58 @@ namespace MvcMovies.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Movies.ToList());
+        //}
+
+        //public ActionResult Index(string searchString)
+        //{
+        //    //string searchString = id;
+        //    //var movies = db.Movies.Select(m => m);
+
+        //    var movies = from m in db.Movies
+        //                 select m;
+
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        movies = movies.Where(s => s.Title.Contains(searchString));
+        //    }
+
+        //    return View(movies);
+        //}
+
+        public ActionResult Index(string movieGenre, string searchString)
         {
-            return View(db.Movies.ToList());
+            var GenreLst = new List<string>();
+
+            var GenreQry = from d in db.Movies
+                           orderby d.Genere
+                           select d.Genere;
+
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.movieGenre = new SelectList(GenreQry);
+
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(movieGenre))
+            {
+                movies = movies.Where(x => x.Genere == movieGenre);
+            }
+
+            return View(movies);
+        }
+
+        [HttpPost]
+        public string Index(FormCollection fc, string searchString)
+        {
+            return "<h3> From [HttpPost]Index: " + searchString + "</h3>";
         }
 
         // GET: Movies/Details/5
@@ -46,7 +96,7 @@ namespace MvcMovies.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genere,Price")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genere,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +128,7 @@ namespace MvcMovies.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genere,Price")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genere,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {

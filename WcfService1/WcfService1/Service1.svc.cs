@@ -14,22 +14,7 @@ namespace WcfService1
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
-
         List<ObtenerAlumnosDTO> obtener = new List<ObtenerAlumnosDTO>();
-
-        //IEnumerable<ObtenerAlumnosDTO> IService1.GetAlumnosDTOs()
-        //{
-        //    LoginServiceEntities db = new LoginServiceEntities();
-        //    var alumnos = db.ObtenerAlumnos().Select(p => new ObtenerAlumnosDTO {
-        //        Profesor = p.Profesor,
-        //        Nombre = p.Nombre,
-        //        Materia = p.Materia,
-        //        Id = p.Id,
-        //        Correo = p.Correo
-        //    });           
-
-        //    return alumnos;
-        //}
 
         public string GetData(int value)
         {

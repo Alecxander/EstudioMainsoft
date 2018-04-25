@@ -16,10 +16,12 @@ namespace EjemploDePrueba
 
         protected void button_EjecutarServicio_Click(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
+            //ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
             //texBox_Saludo.Text = service.Saludar("Buenos dias Sr. ");
 
-            GridView1.DataSource = service.ObtenerAlumnos();
+            ServiceReferenceSomee.ProductosSoapClient serviceReferenceSomee = new EjemploDePrueba.ServiceReferenceSomee.ProductosSoapClient();
+
+            GridView1.DataSource = serviceReferenceSomee.ObtenerProductos();
             GridView1.DataBind();
         }
 
