@@ -14,18 +14,19 @@ namespace MvcMovies.Models
         [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
 
-        [Display(Name = "Release Date")]
-        [DataType(DataType.Date)]
+        [Display(Name = "Release Date"), DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)] 
         public DateTime ReleaseDate { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$", ErrorMessage = "Debe obtener solo caracteres alfabeticos sin numeros ni caracteres especiales y debe enpezar por mayuscula.")]
         [Required]
         [StringLength(30)]
         public string Genere { get; set; }
 
         [Range(1, 100)]
+        [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$")]

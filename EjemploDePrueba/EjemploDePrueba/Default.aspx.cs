@@ -19,6 +19,11 @@ namespace EjemploDePrueba
             //ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
             //texBox_Saludo.Text = service.Saludar("Buenos dias Sr. ");
 
+            ObtenerProductos();
+        }
+
+        private void ObtenerProductos()
+        {
             ServiceReferenceSomee.ProductosSoapClient serviceReferenceSomee = new EjemploDePrueba.ServiceReferenceSomee.ProductosSoapClient();
 
             GridView1.DataSource = serviceReferenceSomee.ObtenerProductos();
@@ -27,15 +32,36 @@ namespace EjemploDePrueba
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var a = 10;
+            var indexSeleccionado = GridView1.SelectedIndex;
 
+
+            hdn_Id.Value = GridView1.Rows[indexSeleccionado].Cells[1].Text;
+            textBox_nombre.Text = GridView1.Rows[indexSeleccionado].Cells[2].Text;
+            textBox_precio.Text = GridView1.Rows[indexSeleccionado].Cells[3].Text;
 
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void button_Actualizar_Click(object sender, EventArgs e)
         {
-            var a = 10;
+            ServiceReferenceSomee.ProductosSoapClient productosSoapClient = new ServiceReferenceSomee.ProductosSoapClient();
+            var nombre = textBox_nombre.Text.Trim();
+            var precio = textBox_precio.Text.Trim();
 
+            if(!(string.IsNullOrEmpty(nombre)) && !(string.IsNullOrEmpty(precio)))
+            {
+                var p = decimal.Parse(precio);
+                var id = Int32.Parse(hdn_Id.Value);
+                productosSoapClient.ActualizarProducto(id, nombre, 2, "Verde", p);
+                textBox_nombre.Text = String.Empty;
+                textBox_precio.Text = string.Empty;
+                ObtenerProductos();
+            }
+        }
+
+        protected void button_Cancelar_Click(object sender, EventArgs e)
+        {
+            textBox_nombre.Text = String.Empty;
+            textBox_precio.Text = string.Empty;
         }
     }
 }
