@@ -29,6 +29,8 @@ namespace ContosoUniversity.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Student student = db.Students.Find(id);
+            //var a = db.Enrollments.ToList();
+            //student.Enrollments = db.Enrollments.ToList();
             if (student == null)
             {
                 return HttpNotFound();
